@@ -5,7 +5,7 @@ import page from '../node_modules/page/page.mjs';
 import { logout as apiLogout } from './api/api.js';
 
 
-
+// Just a comment here.
 
 import { loginPage } from './views/login.js';
 import { registerPage } from './views/register.js';
