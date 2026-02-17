@@ -1,0 +1,32 @@
+name: Node.js CI workflow
+
+on:
+    push:
+        branches:
+            - master
+
+jobs:
+    build_test:
+
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v6
+            
+            - name: Set-up Node.js
+              uses: actions/setup-node@v6
+              with:
+                node-version: '24.x'
+            
+            - name: Install dependencies
+              run: npm install
+
+            - name: Start server
+              run: npm run server &
+
+            - name: Start application
+              run: npm start &
+
+            - name: Run tests
+              run: npm test
